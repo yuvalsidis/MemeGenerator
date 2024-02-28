@@ -9,3 +9,7 @@
 @import url(setup/vars.css);
 
 /* COMPONENTS */
+@import url(components/main-layout.css);
+@import url(components/main-header.css);
+@import url(components/main-content.css);
+
