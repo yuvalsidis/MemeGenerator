@@ -1,6 +1,9 @@
 
 let gElCavnas
 let gCtx
+let gImg
+let gCurrMeme
+let gCurrLine
 
 function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
@@ -8,22 +11,26 @@ function onInit() {
     renderMeme()
 }
 
-function renderMeme(){
+function renderMeme() {
+    gCurrMeme = getMeme()
+    gCurrLine = getLine(0)
+    gImg = getImg(gCurrMeme.selectedImgId)
     renderImage()
 }
 function renderImage() {
     const img = new Image()
-    img.src = 'img/meme-imgs-square/1.jpg'
+    img.src = gImg.url
 
-    img.onload = () =>{
-        gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)        
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
         drawText()
     }
 }
 
 function drawText() {
-    gCtx.fillStyle = 'white'
-    gCtx.font = '45px david'
-    gCtx.fillText('Hello', 140, 45)
-    gCtx.strokeText('Hello', 140, 45)
+    gCtx.fillStyle = gCurrLine.color
+    gCtx.font = `${gCurrLine.size}px david`
+    gCtx.fillText(gCurrLine.txt, 140, 45)
+    gCtx.strokeText(gCurrLine.txt, 140, 45)
 }
+
