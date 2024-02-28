@@ -2,7 +2,7 @@
 .main-layout {
     display: grid;
     margin-top: 20px;
-    grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+    grid-template-columns:  minmax(auto, 1fr) minmax(auto, 1fr);
     grid-template-rows: 80px 1fr;
     grid-template-areas:
         " t t "
@@ -16,5 +16,10 @@
 
 .main-layout .main-content {
     grid-area: m m;
+}
+
+.a{
+    grid-area:  a;
+    background-color:  white;
 }
 
