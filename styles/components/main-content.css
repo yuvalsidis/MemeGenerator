@@ -7,7 +7,10 @@
         " g e ";
 }
 
+.main-content .gallery{
+    grid-area: g;    
+}
 
-main-content
-gallery
-main-editor
+.main-content .main-editor{
+    grid-area: editor;
+}
