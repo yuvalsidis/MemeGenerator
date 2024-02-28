@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="styleshee" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    
 
-
-
-
-
-
-
-
-
-
-
+<body class="main-layout" onclick="onInit()">
+    <header class="main-header">
+        <h2 class="logo"> logo</h2>
+        <ul class="header-btns">
+            <li>
+                <button class="btn galleryBtn">Gallery</button>
+            </li>
+            <li>
+                <button class="btn aboutBtn">About</button>
+            </li>
+        </ul>
+    </header>
+    <main class="main-content">
+        <section class="gallery">
+            <canvas class="main-canvas" width="550" height="550px"></canvas>
+        </section>
+        <section class="main-editor">
+            <div class="editor-container"></div>
+        </section>
+    </main>
 
 
     <!--UTILS LINKING -->
@@ -33,4 +42,5 @@
     <!-- MAIN LINKING -->
     <script src="js/main.js"></script>
 </body>
+
 </html>

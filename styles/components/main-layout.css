@@ -1,0 +1,19 @@
+/* Main Layout */
+.main-layout {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        " t t "
+        " m m ";
+}
+
+.main-layout .main-header {
+    grid-area: t;
+}
+
+.main-layout .main-content {
+    grid-area: m m;
+}
+

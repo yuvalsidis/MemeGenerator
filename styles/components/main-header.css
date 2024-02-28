@@ -1,0 +1,15 @@
+/* Main Header */
+.main-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        " g b ";
+}
+
+.main-header .header-btns .galleryBtn{
+    grid-area: b;
+}
+
+.main-header .logo {
+    grid-area: g;
+}
