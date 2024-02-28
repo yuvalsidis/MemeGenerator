@@ -1,0 +1,13 @@
+/* Main Content */
+
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        " g e ";
+}
+
+
+main-content
+gallery
+main-editor

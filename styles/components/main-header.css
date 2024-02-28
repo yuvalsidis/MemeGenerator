@@ -3,13 +3,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        " g b ";
-}
-
-.main-header .header-btns .galleryBtn{
-    grid-area: b;
+        " logo buttons ";
 }
 
 .main-header .logo {
-    grid-area: g;
+    grid-area: logo;
 }
+.main-header .header-btns .galleryBtn{
+    grid-area: buttons;
+}
+
+
