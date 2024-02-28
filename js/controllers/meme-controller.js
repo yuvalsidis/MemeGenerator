@@ -22,9 +22,8 @@ function renderImage() {
 }
 
 function drawText() {
-    gCtx.lineWidth = 2
     gCtx.fillStyle = 'white'
     gCtx.font = '45px david'
     gCtx.fillText('Hello', 140, 45)
-    gCtx.strokeText('Hello', 25, 45)
+    gCtx.strokeText('Hello', 140, 45)
 }
