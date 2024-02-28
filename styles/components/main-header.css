@@ -14,4 +14,9 @@
     grid-area: buttons;
 }
 
+.main-header .header-btns{
+    display: flex;
+    gap: 10px;
+}
+
 

@@ -1,3 +1,7 @@
 *{
     box-sizing: border-box;
 }
+
+body{
+    background-color:  RGBA(62, 75, 104, 1);
+}
