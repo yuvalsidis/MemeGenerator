@@ -2,15 +2,26 @@
 
 .main-content{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(34.375em ,1fr)  minmax(34.375em ,1fr) ;
     grid-template-areas:
-        " g e ";
+        " gallery editor ";
+        gap: 80px;
 }
 
 .main-content .gallery{
-    grid-area: g;    
+    grid-area: gallery;
+    border: 1px solid black;
+    width: 34.375em ;
+    height: 34.375em;
 }
 
 .main-content .main-editor{
     grid-area: editor;
+    width: 34.375em ;
+    height: 34.375em;
+    border: 1px solid black;
 }
+
+
+
+
