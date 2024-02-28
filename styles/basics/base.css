@@ -3,5 +3,5 @@
 }
 
 body{
-    background-color:  RGBA(62, 75, 104, 1);
+    background-color:  var(--primary-1);
 }
