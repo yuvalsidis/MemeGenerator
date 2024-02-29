@@ -23,3 +23,7 @@ function getImg(idx){
 function getLine(idx){
     return gMeme.lines[idx]
 }
+
+function setLineText(idx, text) {
+    gMeme.lines[idx].txt = text
+}

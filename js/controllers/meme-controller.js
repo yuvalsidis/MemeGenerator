@@ -5,10 +5,12 @@ let gImg
 let gCurrMeme
 let gCurrLine
 
+
 function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
     gCtx = gElCavnas.getContext('2d')
     renderMeme()
+    
 }
 
 function renderMeme() {
@@ -33,4 +35,5 @@ function drawText() {
     gCtx.fillText(gCurrLine.txt, 140, 45)
     gCtx.strokeText(gCurrLine.txt, 140, 45)
 }
+
 
