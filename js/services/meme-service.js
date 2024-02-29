@@ -20,8 +20,8 @@ function getImg(idx){
     return gImgs.find((img) => img.id === idx)
 }
 
-function getLine(idx){
-    return gMeme.lines[idx]
+function getLine(){
+    return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 function setLineText(idx,text) {
