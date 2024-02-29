@@ -21,7 +21,7 @@ function renderMeme() {
     gCtx.clearRect(0, 0, gElCavnas.width, gElCavnas.height) //Fix Rendering issue
     gCurrMeme = getMeme()
     gCurrLineObject = getLine()
-    gImg = getImg(gCurrMeme.selectedImgId)
+    gImg = getImg()
     renderImage()
 }
 

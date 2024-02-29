@@ -16,8 +16,11 @@ function getMeme(){
    return gMeme
 }
 
-function getImg(idx){
-    return gImgs.find((img) => img.id === idx)
+function getSelctedImg(params) {
+    
+}
+function getImg(){
+    return gImgs.find((img) => img.id === gMeme.selectedImgId)
 }
 
 function getLine(){
