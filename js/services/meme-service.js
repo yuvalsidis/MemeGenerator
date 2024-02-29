@@ -13,7 +13,7 @@ var gMeme = {
 }
 
 _createImgs()
-console.log(gImgs)
+
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 function getMeme() {
@@ -37,11 +37,19 @@ function setLineText(text) {
 }
 
 function _createImgs() {
-    for (var i = 1; i <= 45; i++)
+    for (var i = 1; i <= 18; i++)
         gImgs.push(
             {
                 id: i,
-                url: `img/meme-imgs-square${i}.jpg`, 
+                url: `img/meme-imgs-square/${i}.jpg`,
+                keywords: ['funny', 'cat'] //Fix Keywords for every Image
+            }
+        )
+    for (var i = 19; i <= 45; i++)
+        gImgs.push(
+            {
+                id: i,
+                url: `img/meme-imgs-various/${i}.jpg`,
                 keywords: ['funny', 'cat'] //Fix Keywords for every Image
             }
         )
