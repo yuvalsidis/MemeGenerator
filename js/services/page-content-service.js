@@ -6,6 +6,7 @@ let gMainContent = document.querySelector('.main-content')
 
 function onClickGallery(){
     gMainContent.innerHTML = ''
+    renderGallery()
 }
 
 function onClickEditor() {
