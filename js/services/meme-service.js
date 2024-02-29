@@ -17,11 +17,11 @@ function getMeme(){
 }
 
 function getSelectedImg() {
-    return gImgs    
+    return gImgs.find((img) => img.id === gMeme.selectedImgId)   
 }
 
 function getImg(){
-    return gImgs.find((img) => img.id === gMeme.selectedImgId)
+    return gImgs 
 }
 
 function getLine(){

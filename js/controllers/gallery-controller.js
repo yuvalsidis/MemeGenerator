@@ -1,0 +1,3 @@
+let gGalleryImgs
+
+gGalleryImgs = getIm
