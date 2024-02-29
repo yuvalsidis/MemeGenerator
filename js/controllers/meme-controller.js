@@ -3,7 +3,7 @@ let gElCavnas
 let gCtx
 let gImg
 let gCurrMeme
-let gCurrLine
+let gCurrLineObject
 
 
 function onInit() {
@@ -19,7 +19,7 @@ function onInit() {
 
 function renderMeme() {
     gCurrMeme = getMeme()
-    gCurrLine = getLine()
+    gCurrLineObject = getLine()
     gImg = getImg(gCurrMeme.selectedImgId)
     renderImage()
 }
@@ -34,10 +34,10 @@ function renderImage() {
 }
 
 function drawText() {
-    gCtx.fillStyle = gCurrLine.color
-    gCtx.font = `${gCurrLine.size}px david`
-    gCtx.fillText(gCurrLine.txt, 140, 45)
-    gCtx.strokeText(gCurrLine.txt, 140, 45)
+    gCtx.fillStyle = gCurrLineObject.color
+    gCtx.font = `${gCurrLineObject.size}px david`
+    gCtx.fillText(gCurrLineObject.txt, 140, 45)
+    gCtx.strokeText(gCurrLineObject.txt, 140, 45)
 }
 
 
