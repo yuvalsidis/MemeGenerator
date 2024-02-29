@@ -12,13 +12,14 @@ function onInit() {
     renderMeme()
     gTextInputElm = document.querySelector('.text-input')
     gTextInputElm.addEventListener('input', (event) => {
+        
     onSetLineText(event.target.value)
 })
 }
 
 function renderMeme() {
     gCurrMeme = getMeme()
-    gCurrLine = getLine(0)
+    gCurrLine = getLine()
     gImg = getImg(gCurrMeme.selectedImgId)
     renderImage()
 }
@@ -43,3 +44,4 @@ function drawText() {
 function onSetLineText(text) {
     setLineText(gCurrLine, text) 
 }
+

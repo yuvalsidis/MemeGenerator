@@ -29,6 +29,3 @@ function setLineText(idx,text) {
     gMeme.lines[idx].txt = text
 }
 
-function setSelectedLineIdx(idx){
-    gMeme.selectedLineIdx = idx
-}
