@@ -43,5 +43,6 @@ function drawText() {
 
 function onSetLineText(text) {
     setLineText(text) 
+    drawText()
 }
 
