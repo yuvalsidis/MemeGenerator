@@ -18,11 +18,13 @@ function onInit() {
 }
 
 function renderMeme() {
+    gCtx.clearRect(0, 0, gElCavnas.width, gElCavnas.height) //Fix Rendering issue
     gCurrMeme = getMeme()
     gCurrLineObject = getLine()
     gImg = getImg(gCurrMeme.selectedImgId)
     renderImage()
 }
+
 function renderImage() {
     const img = new Image()
     img.src = gImg.url
@@ -43,6 +45,6 @@ function drawText() {
 
 function onSetLineText(text) {
     setLineText(text) 
-    drawText()
+    renderMeme() 
 }
 
