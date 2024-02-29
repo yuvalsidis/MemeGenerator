@@ -42,6 +42,6 @@ function drawText() {
 
 
 function onSetLineText(text) {
-    setLineText(gCurrLine, text) 
+    setLineText(text) 
 }
 

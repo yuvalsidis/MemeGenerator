@@ -24,8 +24,8 @@ function getLine(){
     return gMeme.lines[gMeme.selectedLineIdx]
 }
 
-function setLineText(idx,text) {
+function setLineText(text) {
     console.log(gMeme.lines[idx].txt)
-    gMeme.lines[idx].txt = text
+    gMeme.lines[selectedLineIdx].txt = text
 }
 
