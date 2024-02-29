@@ -10,7 +10,10 @@ function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
     gCtx = gElCavnas.getContext('2d')
     renderMeme()
-    
+    gTextInputElm = document.querySelector('.text-input')
+    gTextInputElm.addEventListener('input', (event) => {
+    onSetLineText(event.target.value)
+})
 }
 
 function renderMeme() {
@@ -37,3 +40,6 @@ function drawText() {
 }
 
 
+function onSetLineText(text) {
+    setLineText(gCurrLine, text) 
+}
