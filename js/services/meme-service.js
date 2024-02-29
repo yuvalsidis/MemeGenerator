@@ -4,7 +4,7 @@ var gMeme = {
  selectedLineIdx: 0,
  lines: [
  {
- txt: 'I sometimes eat Falafel',
+ txt: 'Insert ext here',
  size: 40,
  color: 'red'
  }
@@ -16,9 +16,10 @@ function getMeme(){
    return gMeme
 }
 
-function getSelctedImg(params) {
-    
+function getSelectedImg() {
+    return gImgs    
 }
+
 function getImg(){
     return gImgs.find((img) => img.id === gMeme.selectedImgId)
 }
