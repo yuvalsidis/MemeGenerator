@@ -1,3 +1,4 @@
 let gGalleryImgs
 
-gGalleryImgs = getIm
+gGalleryImgs = getImg()
+console.log(gGalleryImgs)
