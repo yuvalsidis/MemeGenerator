@@ -4,6 +4,7 @@ let gCtx
 let gImg
 let gCurrMeme
 let gCurrLineObject
+let gLine = []
 
 
 function onInit() {
@@ -18,7 +19,7 @@ function onInit() {
 }
 
 function renderMeme() {
-    gCtx.clearRect(0, 0, gElCavnas.width, gElCavnas.height) //Fix Rendering issue
+    onClearCanvas()
     gCurrMeme = getMeme()
     gCurrLineObject = getLine()
     gImg = getSelectedImg()
@@ -48,3 +49,7 @@ function onSetLineText(text) {
     renderMeme() 
 }
 
+function onClearCanvas() {
+    gLine = []
+    gCtx.clearRect(0, 0, gElCavnas.width, gElCavnas.height) //Fix Rendering issue
+}
