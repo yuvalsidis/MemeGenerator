@@ -8,6 +8,5 @@ function renderGallery() {
         strHTML.push(`<img src="${img.url}">`)
     })
     strHTML = strHTML.join('')
-    console.log(strHTML)
     gMainContent.innerHTML = strHTML
 }
