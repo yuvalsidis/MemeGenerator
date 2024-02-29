@@ -45,7 +45,8 @@ function _createImgs() {
                 keywords: ['funny', 'cat'] //Fix Keywords for every Image
             }
         )
-    for (var i = 19; i <= 45; i++)
+    for (var i = 19; i <= 43; i++) {
+
         gImgs.push(
             {
                 id: i,
@@ -53,4 +54,5 @@ function _createImgs() {
                 keywords: ['funny', 'cat'] //Fix Keywords for every Image
             }
         )
+    }
 }
