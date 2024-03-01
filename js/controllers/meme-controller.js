@@ -71,6 +71,12 @@ function onDecreaseSize() {
     renderMeme()
 }
 
+//Add a Text Line
+function onClickAddLine(){
+    createLine()
+    renderMeme
+}
+
 function decreaseOrIncreaseSize(condition) {
     let modifiedSize = null
     const currSize = getTextSize()
@@ -118,6 +124,7 @@ function onLoadFromCavnas() {
         renderMeme();
     }
 }
+
 
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')
