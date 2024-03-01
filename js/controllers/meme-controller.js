@@ -55,10 +55,10 @@ function onSelectImg(id) {
     moveImageToEditorAndRender()
 }
 
-// DOWNLOAD
-
-function onClickDownloadImg() {
-    
+// DOWNLOAD IMG
+function onClickDownloadImg(elLink) {
+    const imgContent = gElCavnas.toDataURL('image/jpeg')
+    elLink.href = imgContent
 }
 
 // STORAGE HANDLE
