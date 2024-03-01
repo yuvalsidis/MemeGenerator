@@ -96,24 +96,30 @@ function onClickSwitchLine(){
     if(correctLine > linesLength - 1){
         setSelectedLineIdx(0)
         textElm.value = textElm.value? getLine().txt :  ''
+        renderMeme()
     }
     else{
         setSelectedLineIdx(correctLine)
         textElm.value = textElm.value?  getLine().txt  : ''
+        renderMeme()
     }
 }
 
 // Draw a frame on the the selected line 
 function drawAFrame(pos, fontSize, text){
+    gCtx.save()
     const {x, y} = pos
+    const framePadding = 1
     const textWidth = gCtx.measureText(text).width
     const textHeight = fontSize
-    gCtx.save()
 
-    const framePadding = 1
+    
+    gCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    gCtx.fillRect(x - framePadding, y - framePadding - 30, textWidth + 30 * framePadding, textHeight + 2 * framePadding)
+    
     gCtx.strokeStyle = 'black'
     gCtx.lineWidth = 2
-    gCtx.strokeRect(x - framePadding, y - framePadding - 30, textWidth + 2 * framePadding, textHeight + 2 * framePadding);
+    gCtx.strokeRect(x - framePadding, y - framePadding - 30, textWidth + 30 * framePadding, textHeight + 2 * framePadding);
     gCtx.restore()
 }
 
