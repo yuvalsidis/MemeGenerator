@@ -51,8 +51,12 @@ function drawText(pos, txt, size, color) {
     gCtx.fillText(txt, x, y)
     gCtx.strokeText(txt, x, y)
     gMemeStorage.push({
-        type: 'text', x: x, y: y, txt: txt,
-        font: `${size}px david`, fillStyle: color
+        pos: {x: x, y: y},
+        type: 'text', 
+        txt: txt,
+        font: `${size}px david`, 
+        fillStyle: color
+        
     })
 }
 
@@ -109,17 +113,23 @@ function onClickSwitchLine(){
 function drawAFrame(pos, fontSize, text){
     gCtx.save()
     const {x, y} = pos
-    const framePadding = 1
+    const framePadding = 2
     const textWidth = gCtx.measureText(text).width
     const textHeight = fontSize
 
-    
-    gCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-    gCtx.fillRect(x - framePadding, y - framePadding - 30, textWidth + 30 * framePadding, textHeight + 2 * framePadding)
+    const extraPadding = 30
+    const frameWidth = textWidth + framePadding * 2+ extraPadding
+    const frameHeight = textHeight + framePadding * 2
+
+    const frameX = x - framePadding;
+    const frameY = y - framePadding - 30
+
+    gCtx.fillStyle = 'rgba(255, 255, 255, 0.3)'
+    gCtx.fillRect(frameX, frameY, frameWidth, frameHeight)
     
     gCtx.strokeStyle = 'black'
     gCtx.lineWidth = 2
-    gCtx.strokeRect(x - framePadding, y - framePadding - 30, textWidth + 30 * framePadding, textHeight + 2 * framePadding);
+    gCtx.strokeRect(frameX, frameY, frameWidth, frameHeight)
     gCtx.restore()
 }
 
@@ -157,6 +167,8 @@ function onClickDownloadImg(elLink) {
     elLink.href = imgContent
 }
 
+
+
 // STORAGE HANDLE
 function onClearCanvas() {
     gMemeStorage = []
@@ -179,7 +191,6 @@ function onLoadFromCavnas() {
     }
 }
 
-
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')
     if (foundedImage) {
@@ -190,10 +201,7 @@ function redrawCanvas() {
             gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
             gMemeStorage.forEach((item) => {
                 if (item.type === 'text') {
-                    gCtx.font = item.font
-                    gCtx.fillStyle = item.fillStyle
-                    gCtx.fillText(item.txt, item.x, item.y)                                         //Reuse drawText function when can..
-                    gCtx.strokeText(item.txt, item.x, item.y)
+                    drawText(item.pos, item.txt, item.font, item.fillStyle)
                 }
             })
 
