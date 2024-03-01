@@ -32,15 +32,18 @@
             <header class="main-editor-header">
                 <form>
                     <input class=" input text-input" type="text" placeholder="Text">
+                    <div class="text-controller">
+                       <button class="btn addLineBtn" onclick="onClickAddLine()">add line +</button> 
+                    </div>
                 </form>
             </header>
             <main class="main-editor-content">
-                <form>
+                <form class="text-decoration">
                    <input class=" input color-input" type="color" placeholder="">
                    <div class="size-input">
-                        <button class="textSize increaseSize" onclick="onIncreaseSize()">+</button>
+                        <button class=" btn textSize increaseSizeBtn" onclick="onIncreaseSize()">+</button>
                         <div class="textSize  correctSize"> 1 </div>
-                        <button class="textSize decreaseSize" onclick="onDecreaseSize()">-</button> 
+                        <button class=" btn textSize decreaseSizeBtn" onclick="onDecreaseSize()">-</button> 
                    </div>
                 <form>   
             </main>
@@ -61,6 +64,7 @@
     <!-- CONTROLLERS LINKING -->
     <script src="js/controllers/gallery-controller.js"></script>
     <script src="js/controllers/meme-controller.js"></script>
+    <script src="js/controllers/editor-controller.js"></script>
     <!-- MAIN LINKING -->
     <script src="js/main.js"></script>
     <!-- PAGE CONTENT SERVICE -->
