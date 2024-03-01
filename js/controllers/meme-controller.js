@@ -27,15 +27,15 @@ function renderMeme() {
 function renderImage() {
     const img = new Image()
     img.src = gImg.url
-    const memeLines =  getLines()
+    const memeLines = getLines()
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
         memeLines.forEach((line, index) => {
             drawText(line.position, line.txt, line.size, line.color)
             const selectedLine = getSelectedLineIdx()
-            console.log('index',index)
-            console.log('selectedLineIndex',selectedLine)
-            if(selectedLine === index){
+            console.log('index', index)
+            console.log('selectedLineIndex', selectedLine)
+            if (selectedLine === index) {
                 const lineToFrame = getLine()
                 drawAFrame(lineToFrame.position, lineToFrame.size, lineToFrame.txt)
             }
@@ -45,18 +45,17 @@ function renderImage() {
 }
 
 function drawText(pos, txt, size, color) {
-    const{x, y} = pos
+    const { x, y } = pos
     gCtx.fillStyle = color
     gCtx.font = `${size}px david`
     gCtx.fillText(txt, x, y)
     gCtx.strokeText(txt, x, y)
     gMemeStorage.push({
-        pos: {x: x, y: y},
-        type: 'text', 
+        pos: { x: x, y: y },
+        type: 'text',
         txt: txt,
-        font: `${size}px david`, 
+        font: `${size}px david`,
         fillStyle: color
-        
     })
 }
 
@@ -83,50 +82,77 @@ function onDecreaseSize() {
 }
 
 //Add a Text Line
-function onClickAddLine(event){
+function onClickAddLine(event) {
     changeNewLineStarter()
     createLine()
-    renderMeme() 
+    renderMeme()
+}
+
+function onClickCanvas(event) {
+    const { offsetX, offsetY } = event
+    const lines = getLines()
+    lines.forEach((line, index) => {
+        const textWidth = gCtx.measureText(line.txt).width
+        const textHeight = line.size
+        const maxX = line.position.x + textWidth
+        const maxY = line.position.y + textHeight
+        console.log(`minX : ${line.position.x}, minY: ${line.position.y}, maxX ${maxX }:, minY: ${maxY }`)
+        if (isInRange(offsetX, line.position.x, maxX) && isInRange(offsetY, line.position.y, maxY)){
+            if(index === 0 )  setSelectedLineIdx(index) 
+            else  setSelectedLineIdx(index + 1)
+            let correctLine = getSelectedLineIdx()
+            handleClickOnLine(correctLine)
+        }
+        else return
+    })
 }
 
 
+function handleClickOnLine(idx) {
+    const textElm = document.querySelector('.main-editor-header .text-input')
+    setSelectedLineIdx(idx)
+    renderMeme()
+    textElm.value = textElm.value ? getLine().txt : ''
+
+}
+
 //This function Handle when switching line
-function onClickSwitchLine(){
+function onClickSwitchLine() {
     const textElm = document.querySelector('.main-editor-header .text-input')
     const linesLength = getLinesLength()
     let correctLine = getSelectedLineIdx()
     correctLine++
     console.log(correctLine)
-    if(correctLine > linesLength - 1){
+    if (correctLine > linesLength - 1) {
         setSelectedLineIdx(0)
-        textElm.value = textElm.value? getLine().txt :  ''
+        textElm.value = textElm.value ? getLine().txt : ''
         renderMeme()
     }
-    else{
+    else {
         setSelectedLineIdx(correctLine)
-        textElm.value = textElm.value?  getLine().txt  : ''
+        textElm.value = textElm.value ? getLine().txt : ''
         renderMeme()
     }
 }
 
 // Draw a frame on the the selected line 
-function drawAFrame(pos, fontSize, text){
+function drawAFrame(pos, fontSize, text) {
     gCtx.save()
-    const {x, y} = pos
+    const { x, y } = pos
     const framePadding = 2
     const textWidth = gCtx.measureText(text).width
-    const textHeight = -fontSize 
-    
+    const textHeight = -fontSize
+
     const extraPadding = 30
-    const frameWidth = textWidth + framePadding * 2+ extraPadding
+    const frameWidth = textWidth + framePadding * 2 + extraPadding
     const frameHeight = textHeight + framePadding * 2
 
     const frameX = x - framePadding
-    const frameY = y - framePadding 
+    const frameY = y - framePadding
 
     gCtx.fillStyle = 'rgba(255, 255, 255, 0.3)'
     gCtx.fillRect(frameX, frameY, frameWidth, frameHeight)
-    
+
     gCtx.strokeStyle = 'black'
     gCtx.lineWidth = 2
     gCtx.strokeRect(frameX, frameY, frameWidth, frameHeight)
@@ -135,9 +161,9 @@ function drawAFrame(pos, fontSize, text){
 
 // This function check where is the last line and adjust the new line position
 function changeNewLineStarter() {
-    const{x, y} = getLastTextPosition()
-    if(y >= gElCavnas.height - 20){
-        setGPosition({x: 80, y: 60})
+    const { x, y } = getLastTextPosition()
+    if (y >= gElCavnas.height - 20) {
+        setGPosition({ x: 80, y: 60 })
     }
 }
 
@@ -211,3 +237,4 @@ function redrawCanvas() {
         console.log('Error: image not found')
     }
 }
+

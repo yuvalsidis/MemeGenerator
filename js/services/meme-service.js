@@ -47,13 +47,13 @@ function getLastTextPosition() {
     return gPosition
 }
 
+function getSelectedLineIdx(){
+    return gMeme.selectedLineIdx
+}
+
 function setGPosition(pos) {
     gPosition.x += pos.x
     gPosition.y = pos.y
-}
-
-function getSelectedLineIdx(){
-    return gMeme.selectedLineIdx
 }
 
 function setSelectedLineIdx(idx){
@@ -86,7 +86,7 @@ function setSelectedImgId(idx) {
 }
 
 function createLine(){
-    gPosition.y += 20
+    gPosition.y += 30
 
     gMeme.lines.push(
         {
