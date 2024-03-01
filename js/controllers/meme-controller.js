@@ -21,7 +21,7 @@ function renderMeme() {
     gCurrMeme = getMeme()
     gCurrLineObject = getLine()
     gImg = getSelectedImg()
-    gMemeStorage.push({ type: 'image', url: gImg.url, id: gImg.id, keywords: gImg.keywords})
+    gMemeStorage.push({ type: 'image', url: gImg.url, id: gImg.id, keywords: gImg.keywords })
     renderImage()
 }
 
@@ -42,8 +42,10 @@ function drawText() {
     gCtx.font = `${gCurrLineObject.size}px david`
     gCtx.fillText(gCurrLineObject.txt, 140, 40)
     gCtx.strokeText(gCurrLineObject.txt, pos.x, pos.y)
-    gMemeStorage.push({ type: 'text', x: pos.x, y: pos.y, txt: gCurrLineObject.txt, 
-                        font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color })
+    gMemeStorage.push({
+        type: 'text', x: pos.x, y: pos.y, txt: gCurrLineObject.txt,
+        font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color
+    })
 }
 
 
@@ -53,35 +55,34 @@ function onSetLineText(text) {
     renderMeme()
 }
 //Change color
-function onSetTextColor(color){
+function onSetTextColor(color) {
     setTextColor(color)
     renderMeme()
 }
 
-// main-editor-content
-// size-input
-// currectSize
-//Change text size
-function onIncreaseSize(){
-    const currSize = getTextSize()
-    const modifiedSize = currSize + 1
-
-    const currectSizeElement = document.querySelector('.main-editor-content .size-input .correctSize')
-    setTextSize(modifiedSize)
-    currectSizeElement.innerText = `${modifiedSize}`
+function onIncreaseSize() {
+    decreaseOrIncreaseSize(true)
     renderMeme()
 }
-function onDecreaseSize(){
-    const currSize = getTextSize()
-    const modifiedSize = currSize - 1
-    if(modifiedSize < 1) return
-
-    const currectSizeElement = document.querySelector('.main-editor-content .size-input .correctSize')
-    setTextSize(modifiedSize)
-    currectSizeElement.innerText = `${modifiedSize}`
+function onDecreaseSize() {
+    decreaseOrIncreaseSize(false)
     renderMeme()
 }
 
+function decreaseOrIncreaseSize(condition) {
+    let modifiedSize = null
+    const currSize = getTextSize()
+    if (condition) {
+        modifiedSize = currSize + 1
+    }
+    else {
+        modifiedSize = currSize - 1
+    }
+    if (modifiedSize < 1) return
+    const currectSizeElement = document.querySelector('.main-editor-content .size-input .correctSize')
+    setTextSize(modifiedSize)
+    currectSizeElement.innerText = `${modifiedSize}`
+}
 
 function onSelectImg(id) {
     setSelectedImgId(id)
@@ -111,7 +112,7 @@ function onLoadFromCavnas() {
         gMemeStorage = storedCanvas
         redrawCanvas()
     }
-    else{
+    else {
         renderMeme();
     }
 }
@@ -124,8 +125,8 @@ function redrawCanvas() {
         console.log(foundedImage.url)
         img.onload = () => {
             gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
-            gMemeStorage.forEach((item) =>{
-                if(item.type === 'text'){
+            gMemeStorage.forEach((item) => {
+                if (item.type === 'text') {
                     gCtx.font = item.font
                     gCtx.fillStyle = item.fillStyle
                     gCtx.fillText(item.txt, item.x, item.y)                                         //Reuse drawText function when can..
