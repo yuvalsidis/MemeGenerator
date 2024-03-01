@@ -64,6 +64,10 @@ function getTextSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
 
+function getLineByIndex(idx) {
+    return gMeme.lines[idx]
+}
+
 function setTextSize(value) {
     gMeme.lines[gMeme.selectedLineIdx].size = value
 }
