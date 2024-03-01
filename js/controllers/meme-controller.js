@@ -51,6 +51,11 @@ function onSetLineText(text) {
     renderMeme()
 }
 
+function onSelectImg(id) {
+    setSelectedImgId(id)
+    onClickEditor()
+}
+
 
 // STORAGE HANDLE
 function onClearCanvas() {
@@ -74,10 +79,6 @@ function onLoadFromCavnas() {
     }
 }
 
-function onSelectImg(id) {
-    setSelectedImgId(id)
-    onClickEditor()
-}
 
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')

@@ -7,7 +7,7 @@ var gMeme = {
         {
             txt: 'Insert ext here',
             size: 40,
-            color: 'red'
+            color: 'white'
         }
     ]
 }
