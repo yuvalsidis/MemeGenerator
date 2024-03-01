@@ -12,11 +12,7 @@ function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
     gCtx = gElCavnas.getContext('2d')
     renderMeme()
-    gTextInputElm = document.querySelector('.text-input')
-    gTextInputElm.addEventListener('input', (event) => {
-
-        onSetLineText(event.target.value)
-    })
+    textInputListener()
 }
 
 function renderMeme() {
