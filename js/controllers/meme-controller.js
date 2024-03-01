@@ -53,7 +53,7 @@ function onSetLineText(text) {
 
 function onSelectImg(id) {
     setSelectedImgId(id)
-    onClickEditor()
+    moveImageToEditorAndRender()
 }
 
 
