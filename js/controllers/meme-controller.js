@@ -60,6 +60,7 @@ function onSetTextColor(color) {
     renderMeme()
 }
 
+//Change text size
 function onIncreaseSize() {
     decreaseOrIncreaseSize(true)
     renderMeme()

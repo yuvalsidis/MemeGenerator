@@ -8,8 +8,14 @@ var gMeme = {
             txt: 'Insert text here',
             size: 40,
             color: 'white'
+        },
+        {
+            txt: 'Insert text here',
+            size: 40,
+            color: 'white'
         }
     ]
+    
 }
 
 _createImgs()
@@ -30,6 +36,10 @@ function getImg() {
 
 function getLine() {
     return gMeme.lines[gMeme.selectedLineIdx]
+}
+
+function getLines() {
+    return gMeme.lines
 }
 
 function getTextSize(){
