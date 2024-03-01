@@ -12,7 +12,7 @@ function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
     gCtx = gElCavnas.getContext('2d')
     renderMeme()
-    textInputListener()
+    eventListeners()
 }
 
 function renderMeme() {
@@ -45,8 +45,15 @@ function drawText() {
                         font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color })
 }
 
+
+//Change text
 function onSetLineText(text) {
     setLineText(text)
+    renderMeme()
+}
+//Change color
+function onSetTextColor(color){
+    setTextColor(color)
     renderMeme()
 }
 
@@ -54,6 +61,11 @@ function onSelectImg(id) {
     setSelectedImgId(id)
     moveImageToEditorAndRender()
 }
+
+
+
+
+
 
 // DOWNLOAD IMG
 function onClickDownloadImg(elLink) {
