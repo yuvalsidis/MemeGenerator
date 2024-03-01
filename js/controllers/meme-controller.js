@@ -68,14 +68,14 @@ function onSaveCanvas() {
 }
 
 function onLoadFromCavnas() {
-    // const storedCanvas = loadFromStorage('canvas')
-    // if (storedCanvas) {
-    //     gMemeStorage = storedCanvas
-    //     redrawCanvas()
-    // }
-    // else{
+    const storedCanvas = loadFromStorage('canvas')
+    if (storedCanvas) {
+        gMemeStorage = storedCanvas
+        redrawCanvas()
+    }
+    else{
         renderMeme();
-    // }
+    }
 }
 
 function onSelectImg(id) {
