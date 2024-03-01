@@ -98,9 +98,9 @@ function onClickCanvas(event) {
         const maxY = line.position.y + textHeight
         console.log(`minX : ${line.position.x}, minY: ${line.position.y}, maxX ${maxX }:, minY: ${maxY }`)
         if (isInRange(offsetX, line.position.x, maxX) && isInRange(offsetY, line.position.y, maxY)){
-            if(index === 0 )  setSelectedLineIdx(index) 
-            else  setSelectedLineIdx(index + 1)
-            let correctLine = getSelectedLineIdx()
+           
+            setSelectedLineIdx(index + 1)
+            const correctLine = getSelectedLineIdx()
             handleClickOnLine(correctLine)
         }
         else return
@@ -108,11 +108,10 @@ function onClickCanvas(event) {
 }
 
 
-function handleClickOnLine(idx) {
+function handleClickOnLine() {
     const textElm = document.querySelector('.main-editor-header .text-input')
-    setSelectedLineIdx(idx)
-    renderMeme()
     textElm.value = textElm.value ? getLine().txt : ''
+    renderMeme()
 
 }
 
