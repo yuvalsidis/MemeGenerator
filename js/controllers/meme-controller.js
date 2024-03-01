@@ -43,7 +43,7 @@ function drawText() {
     const pos = { x: 140, y: 40 }
     gCtx.fillStyle = gCurrLineObject.color
     gCtx.font = `${gCurrLineObject.size}px david`
-    gCtx.fillText(gCurrLineObject.txt, 140, 45)
+    gCtx.fillText(gCurrLineObject.txt, 140, 40)
     gCtx.strokeText(gCurrLineObject.txt, pos.x, pos.y)
     gMemeStorage.push({ type: 'text', x: pos.x, y: pos.y, txt: gCurrLineObject.txt, 
                         font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color })
@@ -80,7 +80,7 @@ function onLoadFromCavnas() {
 
 function onSelectImg(id) {
     setSelectedImgId(id)
-    renderMeme()
+    onClickEditor()
 }
 
 function redrawCanvas() {

@@ -37,7 +37,8 @@ function setLineText(text) {
 }
 
 function setSelectedImgId(idx) {
-    gMeme.selectedImgId = idx                
+    gMeme.selectedImgId = idx    
+    renderGallery            
 }
 
 function _createImgs() {
