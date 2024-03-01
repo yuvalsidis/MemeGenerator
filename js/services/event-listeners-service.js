@@ -9,6 +9,9 @@ function clickOnBodyElments(){
     document.body.addEventListener('click', event => {
         event.target.classList.contains('textSize') ? event.preventDefault() : null 
     })
+    document.body.addEventListener('click', event => {
+        event.target.classList.contains('addLineBtn') ? event.preventDefault() : null 
+    })
 }
 
 function textInputListener(){
