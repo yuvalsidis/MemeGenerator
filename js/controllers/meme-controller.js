@@ -73,8 +73,17 @@ function onDecreaseSize() {
 
 //Add a Text Line
 function onClickAddLine(){
+    changeNewLineStarter()
     createLine()
-    renderMeme
+    renderMeme()
+}
+
+// This function check where is the last line and adjust the new line position
+function changeNewLineStarter() {
+    const{x, y} = getLastTextPosition()
+    if(y >= gElCavnas.height - 20){
+        setGPosition({x: 80, y: 60})
+    }
 }
 
 function decreaseOrIncreaseSize(condition) {
