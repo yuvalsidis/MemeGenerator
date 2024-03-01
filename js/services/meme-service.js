@@ -79,6 +79,11 @@ function getLastTextPosition() {
     return gPosition
 }
 
+function setGPosition(pos) {
+    gPosition.x = pos.x
+    gPosition.y = pos.y
+}
+
 
 function _createImgs() {
     for (var i = 1; i <= 18; i++)
