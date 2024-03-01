@@ -25,3 +25,7 @@ function downloadCSV(elLink, objects) {
     elLink.href = 'data:text/csv;charset=utf-8,' + csvContent
     elLink.download = 'places.csv'
 }
+
+function isInRange(number, min, max) {
+    return number >= min && number <= max
+}
