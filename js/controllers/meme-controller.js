@@ -19,7 +19,6 @@ function onInit() {
 function renderMeme() {
     onClearCanvas()
     gCurrMeme = getMeme()
-    gCurrLineObject = getLine()
     gImg = getSelectedImg()
     gMemeStorage.push({ type: 'image', url: gImg.url, id: gImg.id, keywords: gImg.keywords })
     renderImage()
@@ -28,23 +27,25 @@ function renderMeme() {
 function renderImage() {
     const img = new Image()
     img.src = gImg.url
-    console.log(gImg.url)
+    const memeLines =  getLines()
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
-        drawText()
+        memeLines.forEach((line) => {
+            drawText(line.position, line.txt, line.size, line.color)
+        })
     }
 
 }
 
-function drawText() {
-    const pos = { x: 140, y: 40 }
-    gCtx.fillStyle = gCurrLineObject.color
-    gCtx.font = `${gCurrLineObject.size}px david`
-    gCtx.fillText(gCurrLineObject.txt, 140, 40)
-    gCtx.strokeText(gCurrLineObject.txt, pos.x, pos.y)
+function drawText(pos, txt, size, color) {
+    const{x, y} = pos
+    gCtx.fillStyle = color
+    gCtx.font = `${size}px david`
+    gCtx.fillText(txt, x, y)
+    gCtx.strokeText(txt, x, y)
     gMemeStorage.push({
-        type: 'text', x: pos.x, y: pos.y, txt: gCurrLineObject.txt,
-        font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color
+        type: 'text', x: x, y: y, txt: txt,
+        font: `${size}px david`, fillStyle: color
     })
 }
 
