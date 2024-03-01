@@ -11,3 +11,7 @@ function textInputListener(){
         }
     })
 }
+
+function colorInputListener(){
+    gColorInputElm = document.querySelector('')
+}
