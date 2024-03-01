@@ -17,6 +17,9 @@ function onClickEditor() {
     onInit()
 }
 
+// give another name to the function
+let moveImageToEditorAndRender = onClickEditor
+
 
  // onLoadFromCavnas() for saving
 
