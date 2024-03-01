@@ -7,10 +7,7 @@ function  eventListeners(){
 // This function prevent default relode when clicking on button or input
 function clickOnBodyElments(){
     document.body.addEventListener('click', event => {
-        event.target.classList.contains('textSize') ? event.preventDefault() : null 
-    })
-    document.body.addEventListener('click', event => {
-        event.target.classList.contains('addLineBtn') ? event.preventDefault() : null 
+        event.target.classList.contains('btn') ? event.preventDefault() : null 
     })
 }
 
