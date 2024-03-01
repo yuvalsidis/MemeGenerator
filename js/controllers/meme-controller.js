@@ -30,8 +30,15 @@ function renderImage() {
     const memeLines =  getLines()
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
-        memeLines.forEach((line) => {
+        memeLines.forEach((line, index) => {
             drawText(line.position, line.txt, line.size, line.color)
+            const selectedLine = getSelectedLineIdx()
+            console.log('index',index)
+            console.log('selectedLineIndex',selectedLine)
+            if(selectedLine === index){
+                const lineToFrame = getLine()
+                drawAFrame(lineToFrame.position, lineToFrame.size, lineToFrame.txt)
+            }
         })
     }
 
@@ -72,23 +79,42 @@ function onDecreaseSize() {
 }
 
 //Add a Text Line
-function onClickAddLine(){
+function onClickAddLine(event){
     changeNewLineStarter()
     createLine()
-    renderMeme()
+    renderMeme() 
 }
 
+
+//This function Handle when switching line
 function onClickSwitchLine(){
+    const textElm = document.querySelector('.main-editor-header .text-input')
     const linesLength = getLinesLength()
     let correctLine = getSelectedLineIdx()
-    console.log(correctLine)
     correctLine++
+    console.log(correctLine)
     if(correctLine > linesLength - 1){
         setSelectedLineIdx(0)
+        textElm.value = textElm.value? getLine().txt :  ''
     }
     else{
         setSelectedLineIdx(correctLine)
+        textElm.value = textElm.value?  getLine().txt  : ''
     }
+}
+
+// Draw a frame on the the selected line 
+function drawAFrame(pos, fontSize, text){
+    const {x, y} = pos
+    const textWidth = gCtx.measureText(text).width
+    const textHeight = fontSize
+    gCtx.save()
+
+    const framePadding = 1
+    gCtx.strokeStyle = 'black'
+    gCtx.lineWidth = 2
+    gCtx.strokeRect(x - framePadding, y - framePadding - 30, textWidth + 2 * framePadding, textHeight + 2 * framePadding);
+    gCtx.restore()
 }
 
 // This function check where is the last line and adjust the new line position
