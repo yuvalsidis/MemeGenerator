@@ -1,4 +1,6 @@
 'use strict'
+const gPosition = {x : 140, y : 60}
+
 var gImgs = [{ id: 1, url: 'img/meme-imgs-square/1.jpg', keywords: ['funny', 'cat'] }]
 var gMeme = {
     selectedImgId: 1,
@@ -6,12 +8,6 @@ var gMeme = {
     lines: [
         {
             position: { x: 140, y: 40 },
-            txt: 'Insert text here',
-            size: 40,
-            color: 'white'
-        },
-        {
-            position: { x: 140, y: 60 },
             txt: 'Insert text here',
             size: 40,
             color: 'white'
@@ -56,7 +52,6 @@ function setLineText(text) {
     gMeme.lines[gMeme.selectedLineIdx].txt = text
 }
 
-
 function setTextColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
@@ -64,6 +59,20 @@ function setTextColor(color) {
 function setSelectedImgId(idx) {
     gMeme.selectedImgId = idx
     renderGallery
+}
+
+function createLine(){
+    gPosition.y += 20
+
+    gMeme.lines.push(
+        {
+            position: { x: gPosition.x, y: gPosition.y },
+            txt: 'Insert text here',
+            size: 40,
+            color: 'white'
+        }
+    )
+    console.log('added line')
 }
 
 function _createImgs() {
