@@ -5,17 +5,19 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
+            position: { x: 140, y: 40 },
             txt: 'Insert text here',
             size: 40,
             color: 'white'
         },
         {
+            position: { x: 140, y: 60 },
             txt: 'Insert text here',
             size: 40,
             color: 'white'
         }
     ]
-    
+
 }
 
 _createImgs()
@@ -42,12 +44,12 @@ function getLines() {
     return gMeme.lines
 }
 
-function getTextSize(){
+function getTextSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
 
-function setTextSize(value){
-     gMeme.lines[gMeme.selectedLineIdx].size = value
+function setTextSize(value) {
+    gMeme.lines[gMeme.selectedLineIdx].size = value
 }
 
 function setLineText(text) {
@@ -55,13 +57,13 @@ function setLineText(text) {
 }
 
 
-function setTextColor(color){
+function setTextColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
 function setSelectedImgId(idx) {
-    gMeme.selectedImgId = idx    
-    renderGallery            
+    gMeme.selectedImgId = idx
+    renderGallery
 }
 
 function _createImgs() {
