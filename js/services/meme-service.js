@@ -1,4 +1,4 @@
-
+'use strict'
 var gImgs = [{ id: 1, url: 'img/meme-imgs-square/1.jpg', keywords: ['funny', 'cat'] }]
 var gMeme = {
     selectedImgId: 1,
@@ -34,6 +34,10 @@ function getLine() {
 
 function setLineText(text) {
     gMeme.lines[gMeme.selectedLineIdx].txt = text
+}
+
+function setSelectedImgId(idx) {
+    gMeme.selectedImgId = idx
 }
 
 function _createImgs() {
