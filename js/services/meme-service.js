@@ -75,6 +75,11 @@ function createLine(){
     console.log('added line')
 }
 
+function getLastTextPosition() {
+    return gPosition
+}
+
+
 function _createImgs() {
     for (var i = 1; i <= 18; i++)
         gImgs.push(
