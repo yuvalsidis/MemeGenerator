@@ -8,6 +8,7 @@ let gCurrLineObject
 let gMemeStorage = []
 let gTextInputElm
 
+
 function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
     gCtx = gElCavnas.getContext('2d')
@@ -56,6 +57,31 @@ function onSetTextColor(color){
     setTextColor(color)
     renderMeme()
 }
+
+// main-editor-content
+// size-input
+// currectSize
+//Change text size
+function onIncreaseSize(){
+    const currSize = getTextSize()
+    const modifiedSize = currSize + 1
+
+    const currectSizeElement = document.querySelector('.main-editor-content .size-input .correctSize')
+    setTextSize(modifiedSize)
+    currectSizeElement.innerText = `${modifiedSize}`
+    renderMeme()
+}
+function onDecreaseSize(){
+    const currSize = getTextSize()
+    const modifiedSize = currSize - 1
+    if(modifiedSize < 1) return
+
+    const currectSizeElement = document.querySelector('.main-editor-content .size-input .correctSize')
+    setTextSize(modifiedSize)
+    currectSizeElement.innerText = `${modifiedSize}`
+    renderMeme()
+}
+
 
 function onSelectImg(id) {
     setSelectedImgId(id)
