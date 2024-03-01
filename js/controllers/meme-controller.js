@@ -115,14 +115,14 @@ function drawAFrame(pos, fontSize, text){
     const {x, y} = pos
     const framePadding = 2
     const textWidth = gCtx.measureText(text).width
-    const textHeight = fontSize
-
+    const textHeight = -fontSize 
+    
     const extraPadding = 30
     const frameWidth = textWidth + framePadding * 2+ extraPadding
     const frameHeight = textHeight + framePadding * 2
 
-    const frameX = x - framePadding;
-    const frameY = y - framePadding - 30
+    const frameX = x - framePadding
+    const frameY = y - framePadding 
 
     gCtx.fillStyle = 'rgba(255, 255, 255, 0.3)'
     gCtx.fillRect(frameX, frameY, frameWidth, frameHeight)

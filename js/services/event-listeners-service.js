@@ -14,7 +14,7 @@ function clickOnBodyElments(){
 function textInputListener(){
     gTextInputElm = document.querySelector('.main-editor-header .text-input')
     gTextInputElm.addEventListener('input', (event) => {
-
+        
         onSetLineText(event.target.value)
     })
     // Prevent default for pressing key 'Enter' (SUBMIT)
