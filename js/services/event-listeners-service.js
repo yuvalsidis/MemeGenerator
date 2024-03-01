@@ -1,5 +1,11 @@
+function  eventListeners(){
+    textInputListener()
+    colorInputListener()
+}
+
+
 function textInputListener(){
-    gTextInputElm = document.querySelector('.text-input')
+    gTextInputElm = document.querySelector('.main-editor-header .text-input')
     gTextInputElm.addEventListener('input', (event) => {
 
         onSetLineText(event.target.value)
@@ -13,5 +19,10 @@ function textInputListener(){
 }
 
 function colorInputListener(){
-    gColorInputElm = document.querySelector('')
+    gColorInputElm = document.querySelector('.main-editor-content .color-input')
+    gColorInputElm.addEventListener('input', (event) => {
+        console.log(event.target.value)
+        onSetTextColor(event.target.value)
+    })
 }
+
