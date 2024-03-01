@@ -1,3 +1,4 @@
+'use strict'
 
 let gElCavnas
 let gCtx
@@ -5,7 +6,7 @@ let gImg
 let gCurrMeme
 let gCurrLineObject
 let gMemeStorage = []
-
+let gTextInputElm
 
 function onInit() {
     gElCavnas = document.querySelector('.main-content .gallery .main-canvas')
@@ -23,13 +24,14 @@ function renderMeme() {
     gCurrMeme = getMeme()
     gCurrLineObject = getLine()
     gImg = getSelectedImg()
+    gMemeStorage.push({ type: 'image', url: gImg.url, id: gImg.id, keywords: gImg.keywords})
     renderImage()
 }
 
 function renderImage() {
     const img = new Image()
     img.src = gImg.url
-    gMemeStorage.push({ type: 'image', imgSrc: gImg.url })
+    console.log(gImg.url)
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
         drawText()
@@ -43,7 +45,8 @@ function drawText() {
     gCtx.font = `${gCurrLineObject.size}px david`
     gCtx.fillText(gCurrLineObject.txt, 140, 45)
     gCtx.strokeText(gCurrLineObject.txt, pos.x, pos.y)
-    gMemeStorage.push({ type: 'text', x: pos.x, y: pos.y, txt: gCurrLineObject.txt, font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color })
+    gMemeStorage.push({ type: 'text', x: pos.x, y: pos.y, txt: gCurrLineObject.txt, 
+                        font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color })
 }
 
 
@@ -65,26 +68,34 @@ function onSaveCanvas() {
 }
 
 function onLoadFromCavnas() {
-    const storedCanvas = loadFromStorage('canvas')
-    if (storedCanvas) {
-        gMemeStorage = storedCanvas
-    }
-    redrawCanvas()
+    // const storedCanvas = loadFromStorage('canvas')
+    // if (storedCanvas) {
+    //     gMemeStorage = storedCanvas
+    //     redrawCanvas()
+    // }
+    // else{
+        renderMeme();
+    // }
+}
+
+function onSelectImg(id) {
+    setSelectedImgId(id)
+    renderMeme()
 }
 
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')
-    console.log('foundedImage')
-    if (foundedImage.type === 'image') {
-        const img = new Image()
-        img.src = foundedImage.imgSrc
+    if (foundedImage) {
+        const img = new Image()                                                                    //reuse render Image when can 
+        img.src = foundedImage.url
+        console.log(foundedImage.url)
         img.onload = () => {
             gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
             gMemeStorage.forEach((item) =>{
-                if(item === 'text'){
+                if(item.type === 'text'){
                     gCtx.font = item.font
                     gCtx.fillStyle = item.fillStyle
-                    gCtx.fillText(item.txt, item.x, item.y)
+                    gCtx.fillText(item.txt, item.x, item.y)                                         //Reuse drawText function when can..
                     gCtx.strokeText(item.txt, item.x, item.y)
                 }
             })
@@ -92,6 +103,6 @@ function redrawCanvas() {
         }
     }
     else {
-        console.log('Error image not found')
+        console.log('Error: image not found')
     }
 }
