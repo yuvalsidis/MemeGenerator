@@ -49,6 +49,14 @@ function setGPosition(pos) {
     gPosition.y = pos.y
 }
 
+function getSelectedLineIdx(){
+    return gMeme.selectedLineIdx
+}
+
+function setSelectedLineIdx(idx){
+    gMeme.selectedLineIdx = idx
+}
+
 function getTextSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
