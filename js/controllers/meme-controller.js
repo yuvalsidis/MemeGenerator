@@ -62,11 +62,6 @@ function onSelectImg(id) {
     moveImageToEditorAndRender()
 }
 
-
-
-
-
-
 // DOWNLOAD IMG
 function onClickDownloadImg(elLink) {
     const imgContent = gElCavnas.toDataURL('image/jpeg')
