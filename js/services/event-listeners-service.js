@@ -1,8 +1,15 @@
 function  eventListeners(){
     textInputListener()
     colorInputListener()
+    clickOnBodyElments()   
 }
 
+// This function prevent default relode when clicking on button or input
+function clickOnBodyElments(){
+    document.body.addEventListener('click', event => {
+        event.target.classList.contains('textSize') ? event.preventDefault() : null 
+    })
+}
 
 function textInputListener(){
     gTextInputElm = document.querySelector('.main-editor-header .text-input')
