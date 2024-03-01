@@ -1,5 +1,5 @@
 'use strict'
-const gPosition = {x : 140, y : 60}
+const gPosition = {x : 0, y : 40}
 
 var gImgs = [{ id: 1, url: 'img/meme-imgs-square/1.jpg', keywords: ['funny', 'cat'] }]
 var gMeme = {
@@ -40,6 +40,15 @@ function getLines() {
     return gMeme.lines
 }
 
+function getLastTextPosition() {
+    return gPosition
+}
+
+function setGPosition(pos) {
+    gPosition.x += pos.x
+    gPosition.y = pos.y
+}
+
 function getTextSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
@@ -74,16 +83,6 @@ function createLine(){
     )
     console.log('added line')
 }
-
-function getLastTextPosition() {
-    return gPosition
-}
-
-function setGPosition(pos) {
-    gPosition.x = pos.x
-    gPosition.y = pos.y
-}
-
 
 function _createImgs() {
     for (var i = 1; i <= 18; i++)
