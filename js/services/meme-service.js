@@ -28,7 +28,7 @@ function getSelectedImg() {
     return gImgs.find((img) => img.id === gMeme.selectedImgId)
 }
 
-function getLineLength() {
+function getLinesLength() {
     return gMeme.lines.length
 }
 function getImg() {

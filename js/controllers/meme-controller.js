@@ -6,7 +6,7 @@ let gImg
 let gCurrMeme
 let gCurrLineObject
 let gMemeStorage = []
-let gTextInputElm
+
 
 
 function onInit() {
@@ -78,6 +78,19 @@ function onClickAddLine(){
     renderMeme()
 }
 
+function onClickSwitchLine(){
+    const linesLength = getLinesLength()
+    let correctLine = getSelectedLineIdx()
+    console.log(correctLine)
+    correctLine++
+    if(correctLine > linesLength - 1){
+        setSelectedLineIdx(0)
+    }
+    else{
+        setSelectedLineIdx(correctLine)
+    }
+}
+
 // This function check where is the last line and adjust the new line position
 function changeNewLineStarter() {
     const{x, y} = getLastTextPosition()
@@ -88,12 +101,12 @@ function changeNewLineStarter() {
 
 function decreaseOrIncreaseSize(condition) {
     let modifiedSize = null
-    const currSize = getTextSize()
+    const corrSize = getTextSize()
     if (condition) {
-        modifiedSize = currSize + 1
+        modifiedSize = corrSize + 1
     }
     else {
-        modifiedSize = currSize - 1
+        modifiedSize = corrSize - 1
     }
     if (modifiedSize < 1) return
     const currectSizeElement = document.querySelector('.main-editor-content .size-input .correctSize')
