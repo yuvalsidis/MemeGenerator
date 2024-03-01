@@ -15,7 +15,7 @@ function onClickEditor() {
     const mainContent = document.querySelector('.main-content')
     mainContent.innerHTML = editorContent
     onInit()
-    onLoadFromCavnas() 
+    // onLoadFromCavnas() 
 }
 
 
