@@ -45,7 +45,6 @@ function drawText() {
                         font: `${gCurrLineObject.size}px david`, fillStyle: gCurrLineObject.color })
 }
 
-
 function onSetLineText(text) {
     setLineText(text)
     renderMeme()
@@ -56,6 +55,11 @@ function onSelectImg(id) {
     moveImageToEditorAndRender()
 }
 
+// DOWNLOAD
+
+function onClickDownloadImg() {
+    
+}
 
 // STORAGE HANDLE
 function onClearCanvas() {
@@ -78,7 +82,6 @@ function onLoadFromCavnas() {
         renderMeme();
     }
 }
-
 
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')
