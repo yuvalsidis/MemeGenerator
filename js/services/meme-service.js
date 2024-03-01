@@ -32,9 +32,14 @@ function getLine() {
     return gMeme.lines[gMeme.selectedLineIdx]
 }
 
+function getTextSize(){
+    return gMeme.lines[gMeme.selectedLineIdx].size
+}
+
 function setLineText(text) {
     gMeme.lines[gMeme.selectedLineIdx].txt = text
 }
+
 
 function setTextColor(color){
     gMeme.lines[gMeme.selectedLineIdx].color = color
