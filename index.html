@@ -9,17 +9,17 @@
 </head>
 
 <body class="main-layout" onload="onInit()">
-    <header class="main-header">
-        <h2 class="logo">logo</h2>
-        <ul class="header-btns">
+    <header class="main-header full ">
+        <h2 class="logo">The Best Meme Editor</h2>
+        <ul class="header-btns clean-list">
             <li>
-                <button class="btn galleryBtn" onclick="onClickGallery()">Gallery</button>
+                <button class="headerBtn galleryBtn" onclick="onClickGallery()">Gallery</button>
             </li>
             <li>
-                <button class="btn aboutBtn">About</button>
+                <button class="headerBtn aboutBtn">About</button>
             </li>
             <li>
-                <button class="btn EditorBtn" onclick="onClickEditor()">Editor</button>
+                <button class="headerBtn EditorBtn" onclick="onClickEditor()">Editor</button>
             </li>
 
         </ul>
@@ -29,6 +29,7 @@
             <canvas class="main-canvas" width="550" height="550" onclick="onClickCanvas(event)"></canvas>
         </section>
         <section class="main-editor">
+            <h1>Editor</h1>
             <header class="main-editor-header">
                 <form>
                     <input class=" input text-input" type="text" placeholder="Text">

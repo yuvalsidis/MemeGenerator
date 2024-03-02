@@ -1,17 +1,32 @@
 /* Main Header */
 .main-header{
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        " logo buttons ";
-        width: 100%;
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 610px) minmax(auto, 610px) minmax(20px, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+.main-header{
+    background: linear-gradient(to right, #ffffff, #e6e6e6); 
+    color: black; 
+    border-radius: 3em;
+    border-bottom: 1px solid var( --primary-2); 
+    box-shadow: 0 2px 5px var( --primary-2); 
+}
+.main-header .logo {
+    grid-column:  2 / 3;
+    justify-self: start;
+    margin-left: 80px;
+    font-size: 2em;
+}
+.main-header .header-btns {
+    grid-column: 3 / 4;
+    align-self: center;
 }
 
-.main-header .logo {
-    grid-area: logo;
-}
-.main-header .header-btns .galleryBtn{
-    grid-area: buttons;
+.main-header .header-btns .headerBtn{
+    border: none;
+    font-size: 1em;
 }
 
 .main-header .header-btns{

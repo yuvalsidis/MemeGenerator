@@ -2,30 +2,37 @@
 
 .main-content{
     display: grid;
-    grid-template-columns: minmax(34.375em ,1fr)  minmax(34.375em ,1fr) ;
+    grid-template-columns: minmax(34.375em ,1fr) minmax(34.375em ,1fr) ;
     grid-template-areas:
         " gallery editor ";
-        gap: 80px;
+    justify-items: center;    
 }
 
 .main-content .gallery{
     grid-area: gallery;
-    border: 1px solid black;
     width: 34.375em ;
     height: 34.375em;
+    border-radius: 3em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .main-content .main-editor{
     grid-area: editor;
     width: 34.375em ;
     height: 34.375em;
-    border: 1px solid black;
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    border-radius: 3em;
+    box-shadow: 0 0 10px  var( --primary-2), 0 0 20px var( --primary-2);
+    border: 1px solid  var( --primary-2); 
+}
+.main-content .main-editor .btn{
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
 
 .main-content .gallery .main-canvas{
     background-color: black;
-
-    opacity: 1;
+    border-radius: 3em;
 }
 
 

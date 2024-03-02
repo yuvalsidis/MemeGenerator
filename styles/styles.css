@@ -2,6 +2,7 @@
 @import url(basics/base.css);
 @import url(basics/layout.css);
 @import url(basics/helpers.css);
+@import url(basics/btn.css);
 
 /* SETUP */
 @import url(setup/typography.css);
@@ -12,5 +13,4 @@
 @import url(components/main-layout.css);
 @import url(components/main-header.css);
 @import url(components/main-content.css);
-@import url(components/btn.css);
-
+@import url(components/main-editor.css)
