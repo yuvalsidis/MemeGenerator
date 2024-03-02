@@ -1,0 +1,5 @@
+.gallery-layout{
+    display: grid;
+    grid-auto-columns: auto;
+    display: none;
+}
