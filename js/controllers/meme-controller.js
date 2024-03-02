@@ -92,6 +92,7 @@ function onClickAddLine(event) {
 function onClickDelete(){
     const selectedLineIdx = getSelectedLineIdx()
     deleteLine(selectedLineIdx)
+    onClickSwitchLine()
 }
 
 function onClickCanvas(event) {
