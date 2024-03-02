@@ -76,6 +76,8 @@ function onIncreaseSize() {
     decreaseOrIncreaseSize(true)
     renderMeme()
 }
+
+// Decrease font size
 function onDecreaseSize() {
     decreaseOrIncreaseSize(false)
     renderMeme()
@@ -89,10 +91,21 @@ function onClickAddLine(event) {
 }
 
 //Delete a line
-function onClickDelete(){
+function onClickDelete() {
     const selectedLineIdx = getSelectedLineIdx()
     deleteLine(selectedLineIdx)
     onClickSwitchLine()
+}
+
+function onClickAlignLeft() {
+    console.log('1',getLine().position)
+    console.log('Clicked Left')
+    const currectLine = getLine()
+    const pos = { x: 0, y: currectLine.position.y}
+    setPositionLine(pos)
+    console.log('2',getLine().position)
+    renderMeme()
+    console.log('4 after change', getLineByIndex(0).position)
 }
 
 function onClickCanvas(event) {
@@ -103,9 +116,9 @@ function onClickCanvas(event) {
         const textHeight = line.size
         const maxX = line.position.x + textWidth
         const maxY = line.position.y + textHeight
-        console.log(`minX : ${line.position.x}, minY: ${line.position.y}, maxX ${maxX }:, minY: ${maxY }`)
-        if (isInRange(offsetX, line.position.x, maxX) && isInRange(offsetY, line.position.y, maxY)){
-           
+        console.log(`minX : ${line.position.x}, minY: ${line.position.y}, maxX ${maxX}:, minY: ${maxY}`)
+        if (isInRange(offsetX, line.position.x, maxX) && isInRange(offsetY, line.position.y, maxY)) {
+
             setSelectedLineIdx(index + 1)
             const correctLine = getSelectedLineIdx()
             handleClickOnLine(correctLine)
@@ -145,7 +158,7 @@ function onClickSwitchLine() {
 function drawAFrame(pos, fontSize, text) {
     gCtx.save()
     const { x, y } = pos
-    const framePadding = 2
+    const framePadding = 0
     const textWidth = gCtx.measureText(text).width
     const textHeight = -fontSize
 
@@ -199,8 +212,6 @@ function onClickDownloadImg(elLink) {
     elLink.href = imgContent
 }
 
-
-
 // STORAGE HANDLE
 function onClearCanvas() {
     gMemeStorage = []
@@ -223,11 +234,10 @@ function onLoadFromCavnas() {
     }
 }
 
-
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')
     if (foundedImage) {
-        const img = new Image()                                                                    //reuse render Image when can 
+        const img = new Image()
         img.src = foundedImage.url
         console.log(foundedImage.url)
         img.onload = () => {
