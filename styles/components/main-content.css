@@ -1,12 +1,12 @@
 /* Main Content */
 
-.main-content{
+/* .main-content{
     display: grid;
     grid-template-columns: minmax(34.375em ,1fr) minmax(34.375em ,1fr) ;
     grid-template-areas:
         " gallery editor ";
     justify-items: center;    
-}
+} */
 
 .main-content .gallery{
     grid-area: gallery;
