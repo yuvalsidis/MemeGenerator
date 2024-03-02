@@ -34,21 +34,30 @@
                 <form>
                     <input class=" input text-input" type="text" placeholder="Text">
                     <div class="text-controller">
-                       <button class="btn addLineBtn" onclick="onClickAddLine()">add line +</button> 
-                       <button class="btn switchLineBtn" onclick="onClickSwitchLine()">switch line</button>
-                       <button class="btn switchLineBtn" onclick="onClickDelete()">delete</button>
+                        <button class="btn addLineBtn" onclick="onClickAddLine()">add line +</button>
+                        <button class="btn switchLineBtn" onclick="onClickSwitchLine()">switch line</button>
+                        <button class="btn switchLineBtn" onclick="onClickDelete()">delete</button>
                     </div>
                 </form>
             </header>
             <main class="main-editor-content">
                 <form class="text-decoration">
-                   <input class=" input color-input" type="color" placeholder="">
-                   <div class="size-input">
-                        <button class=" btn textSize increaseSizeBtn" onclick="onIncreaseSize()">+</button>
-                        <div class="textSize  correctSize"> 1 </div>
-                        <button class=" btn textSize decreaseSizeBtn" onclick="onDecreaseSize()">-</button> 
-                   </div>
-                <form>   
+                    <input class=" input color-input" type="color" placeholder="">
+                    <ul class="size-input clean-list">
+                        <li>
+                            <button class=" btn textSize increaseSizeBtn" onclick="onIncreaseSize()">+</button>
+                        </li>
+                        <li>
+                            <div class="textSize correctSize">1</div>
+                        </li>
+                        <li>
+                            <button class=" btn textSize decreaseSizeBtn" onclick="onDecreaseSize()">-</button>
+                        </li>
+                    </ul>
+                </form>
+                <form class="text-emojies">
+                       <p> Here will be text emjoies list</p>
+                </form>
             </main>
             <footer class="main-editor-footer">
                 <a class="links" href="#" download="img" onclick="onClickDownloadImg(this)">Download</a>

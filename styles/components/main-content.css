@@ -26,6 +26,7 @@
     box-shadow: 0 0 10px  var( --primary-2), 0 0 20px var( --primary-2);
     border: 1px solid  var( --primary-2); 
 }
+
 .main-content .main-editor .btn{
     background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
@@ -35,6 +36,9 @@
     border-radius: 3em;
 }
 
+text-decoration
+size-input
+correctSize
 
 
 

@@ -17,7 +17,10 @@
 }
 
 .main-editor .main-editor-content{
+    position: relative;
     grid-row: 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 .main-editor .main-editor-footer{
@@ -38,3 +41,53 @@
 .main-editor .main-editor-header .text-controller{
     grid-row: 2;
 }
+
+.main-editor .main-editor-content .text-decoration .size-input{
+    display: flex;
+}
+
+.main-editor .main-editor-content .text-decoration{
+    grid-row: 1;
+    display: grid;
+    grid-row: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    margin-left: 55px;
+    background-color: gray;
+    border-radius: 2em;
+}
+
+.main-editor .main-editor-content .text-emojies{
+    grid-row: 2;
+    width: 80%;
+    height: 80%;
+    margin-left: 55px;
+    background-color: lightgray;
+    border-radius: 2em;
+}
+
+
+
+
+
+
+
+
+.main-editor .text-decoration .size-input{
+    border-radius: 2em;
+}
+
+.main-editor .text-decoration .size-input * > .btn{
+    border-style: none;
+}
+.main-editor .text-decoration .size-input li{
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border: 2px solid black;
+}
+
+.main-editor .text-decoration .size-input li:not(:last-child){
+    border-right: none;
+}
+
