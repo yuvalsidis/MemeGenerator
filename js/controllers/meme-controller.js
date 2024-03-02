@@ -97,15 +97,25 @@ function onClickDelete() {
     onClickSwitchLine()
 }
 
-function onClickAlignLeft() {
-    console.log('1',getLine().position)
-    console.log('Clicked Left')
-    const currectLine = getLine()
-    const pos = { x: 0, y: currectLine.position.y}
-    setPositionLine(pos)
-    console.log('2',getLine().position)
+function onClickAlign(value) {
+    if(value === 0){
+        const currectLine = getLine()
+        const pos = { x: 0, y: currectLine.position.y}
+        setPositionLine(pos)
+    }
+    else if(value === 0.5){
+        const currectLine = getLine()
+        const middleForText = gElCavnas.width / 2 - (gCtx.measureText(currectLine.text).width) + 30
+        const pos = { x: middleForText, y: currectLine.position.y}
+        setPositionLine(pos)
+    }
+    else if(value === 1){
+        const currectLine = getLine()
+        const finalForText = gElCavnas.width - (gCtx.measureText(currectLine.text).width) * 2 + 44
+        const pos = { x: finalForText, y: currectLine.position.y}
+        setPositionLine(pos)
+    }
     renderMeme()
-    console.log('4 after change', getLineByIndex(0).position)
 }
 
 function onClickCanvas(event) {
