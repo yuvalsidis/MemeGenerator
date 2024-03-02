@@ -86,7 +86,11 @@ function setSelectedImgId(idx) {
 }
 
 function setPositionLine(pos) {
-    gMeme.lines[gMeme.selectedLineIdx].pos = {x: pos.x, y: pos.y}
+    gMeme.lines.find((line,index) => {
+        if(index === gMeme.selectedLineIdx){
+            line.position = {x: pos.x, y: pos.y}
+        }
+    })
 }
 
 function deleteLine(idx) {
