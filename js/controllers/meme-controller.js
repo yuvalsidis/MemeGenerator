@@ -32,7 +32,7 @@ function renderImage() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCavnas.width, gElCavnas.height)
         memeLines.forEach((line, index) => {
-            drawText(line.position, line.txt, line.size, line.color)
+            drawText(line.position, line.txt, line.size, line.color, line.fontFamily)
             const selectedLine = getSelectedLineIdx()
             console.log('index', index)
             console.log('selectedLineIndex', selectedLine)
@@ -45,17 +45,17 @@ function renderImage() {
 
 }
 
-function drawText(pos, txt, size, color) {
+function drawText(pos, txt, size, color, fontFamily) {
     const { x, y } = pos
     gCtx.fillStyle = color
-    gCtx.font = `${size}px david`
+    gCtx.font = `${size}px ${fontFamily}`
     gCtx.fillText(txt, x, y)
     gCtx.strokeText(txt, x, y)
     gMemeStorage.push({
         pos: { x: x, y: y },
         type: 'text',
         txt: txt,
-        font: `${size}px david`,
+        font: `${size}px ${fontFamily}`,
         fillStyle: color
     })
 }
@@ -98,22 +98,28 @@ function onClickDelete() {
     onClickSwitchLine()
 }
 
+//Make the text bold
+function onClickBold() {
+
+}
+
+
 function onClickAlign(value) {
-    if(value === 0){
+    if (value === 0) {
         const currectLine = getLine()
-        const pos = { x: 0, y: currectLine.position.y}
+        const pos = { x: 0, y: currectLine.position.y }
         setPositionLine(pos)
     }
-    else if(value === 0.5){
+    else if (value === 0.5) {
         const currectLine = getLine()
         const middleForText = gElCavnas.width / 2 - (gCtx.measureText(currectLine.text).width) + 30
-        const pos = { x: middleForText, y: currectLine.position.y}
+        const pos = { x: middleForText, y: currectLine.position.y }
         setPositionLine(pos)
     }
-    else if(value === 1){
+    else if (value === 1) {
         const currectLine = getLine()
         const finalForText = gElCavnas.width - (gCtx.measureText(currectLine.text).width) * 2 + 44
-        const pos = { x: finalForText, y: currectLine.position.y}
+        const pos = { x: finalForText, y: currectLine.position.y }
         setPositionLine(pos)
     }
     renderMeme()
@@ -166,11 +172,32 @@ function onClickSwitchLine() {
 
     // adjust Update color value on switch line..
     gColorInputElm = document.querySelector('.main-editor-content .color-input')
-    gColorInputElm.value =  getLine().color
+    gColorInputElm.value = getLine().color
 
     //adjust Update text size on switch line
     onIncreaseSize()
 }
+
+
+
+
+
+
+// function addBoldToText(pos, fontSize, text) {
+//     gCtx.save()
+//     gCtx.font()
+// }
+
+
+
+
+
+
+
+
+
+
+
 
 // Draw a frame on the the selected line 
 function drawAFrame(pos, fontSize, text) {
