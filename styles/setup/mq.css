@@ -12,7 +12,8 @@
     .main-header .header-btns {
         position: absolute;
         display: flex;
-        flex-flow: row;
+        opacity: 0;
+        flex-flow: column;
         margin-bottom: 20px;
         gap: 10px;
         top: 0;
@@ -31,6 +32,7 @@
     }
 }
 
+/* MEDIUM */
 @media (min-width:870px) and (max-width: 1070px) {
     .main-layout {
         position: relative;
