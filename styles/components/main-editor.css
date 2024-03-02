@@ -57,6 +57,7 @@
 }
 .main-editor .main-editor-content .text-decoration > *{
     border-radius: 0.5em;
+    border-style: none;
 }
 
 
@@ -64,26 +65,32 @@
     grid-column: 1;
     grid-row: 1;
     display: flex;
+    align-self: center;
+    border-radius: 2em;
 }
 
 .main-editor .main-editor-content .text-decoration .color-input{
     grid-column: 4;
     grid-row: 2;
+    
 }
 
 .main-editor .main-editor-content .text-decoration .text-align-left{
     grid-column: 2;
     grid-row: 1;
+    scale: 1.5;
 }
 
 .main-editor .main-editor-content .text-decoration .text-align-center{
     grid-column: 3;
     grid-row: 1;
+    scale: 1.5;
 }
 
 .main-editor .main-editor-content .text-decoration .text-align-right{
     grid-column: 4;
     grid-row: 1;
+    scale: 1.5;
 }
 .main-editor .main-editor-content .text-decoration .font-family-select{
     width: 10em;
@@ -94,6 +101,7 @@
 .main-editor .main-editor-content .text-decoration .text-bold{
     grid-column: 3/4;
     grid-row: 2;
+    scale: 1.5;
 }
 
 .main-editor .main-editor-content .text-emojies{
@@ -130,5 +138,9 @@
     margin-left: 10px;
 }
 
+.main-editor .main-editor-header .text-controller > *{
+    scale: 1.5;
+    margin-left: 20px;
+}
 
 

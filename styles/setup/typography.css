@@ -13,6 +13,10 @@
     src: url(/fonts/Bungee/Bungee_Hairline/Bungee/Bungee_Spice/BungeeSpice-Regular.ttf);
 }
 
+@font-face{
+    font-family: fa-solid;
+    src: url(/fonts/fa-solid-900.ttf);
+}
 
 .main-layout .main-header .logo{
     font-family: Bungee-Regular;
@@ -26,5 +30,45 @@
     font-family: Bungee-Hairline ;
     font-weight: bold;
 }
+
+
+
+
+/* ICONS */
+.main-editor .main-editor-content .text-decoration .text-align-center::before{
+   font-family: fa-solid;
+   content: "\f037";
+}
+
+.main-editor .main-editor-content .text-decoration .text-align-right::before{
+    font-family: fa-solid;
+    content: "\f038";
+ }
+ 
+ .main-editor .main-editor-content .text-decoration .text-align-left::before{
+    font-family: fa-solid;
+    content: "\f036";
+ } 
+
+.main-content .main-editor .main-editor-header .text-controller .addLineBtn::before{
+    font-family: fa-solid;
+    content: "\2b";
+}
+
+.main-content .main-editor .main-editor-header .text-controller .switchLineBtn::before{
+    font-family: fa-solid;
+    content: "\f07d";
+}
+
+.main-content .main-editor .main-editor-header .text-controller .deleteLineBtn::before{
+    font-family: fa-solid;
+    content: "\f2ed";
+}
+
+.main-content .main-editor .main-editor-content .text-bold::before{
+    font-family: fa-solid;
+    content: "\f032";
+}
+
 
 
