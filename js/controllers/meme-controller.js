@@ -88,6 +88,12 @@ function onClickAddLine(event) {
     renderMeme()
 }
 
+//Delete a line
+function onClickDelete(){
+    const selectedLineIdx = getSelectedLineIdx()
+    deleteLine(selectedLineIdx)
+}
+
 function onClickCanvas(event) {
     const { offsetX, offsetY } = event
     const lines = getLines()
@@ -215,6 +221,7 @@ function onLoadFromCavnas() {
         renderMeme();
     }
 }
+
 
 function redrawCanvas() {
     const foundedImage = gMemeStorage.find((item) => item.type === 'image')
