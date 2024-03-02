@@ -85,6 +85,10 @@ function setSelectedImgId(idx) {
     renderGallery
 }
 
+function deleteLine(idx) {
+    gMeme.lines.splice(idx, 1)
+}
+
 function createLine(){
     gPosition.y += 30
 
