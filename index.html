@@ -13,13 +13,13 @@
         <h2 class="logo">The Best Meme Editor</h2>
         <ul class="header-btns clean-list">
             <li>
-                <button class="headerBtn galleryBtn" onclick="onClickGallery()">Gallery</button>
+                <button class="btn headerBtn galleryBtn" onclick="onClickGallery()">Gallery</button>
             </li>
             <li>
-                <button class="headerBtn aboutBtn">About</button>
+                <button class="btn headerBtn aboutBtn">About</button>
             </li>
             <li>
-                <button class="headerBtn EditorBtn" onclick="onClickEditor()">Editor</button>
+                <button class="btn headerBtn EditorBtn" onclick="onClickEditor()">Editor</button>
             </li>
 
         </ul>
@@ -32,7 +32,7 @@
             <h1>Editor</h1>
             <header class="main-editor-header">
                 <form>
-                    <input class=" input text-input" type="text" placeholder="Text">
+                    <input class="input text-input" type="text" placeholder="Text">
                     <div class="text-controller">
                         <button class="btn addLineBtn" onclick="onClickAddLine()">add line +</button>
                         <button class="btn switchLineBtn" onclick="onClickSwitchLine()">switch line</button>
@@ -54,24 +54,28 @@
                             <button class=" btn textSize decreaseSizeBtn" onclick="onDecreaseSize()">-</button>
                         </li>
                     </ul>
-                    <button class="text-align-left">Left</button>
-                    <button class="text-align-center">Center</button>
-                    <button class="text-align-right">Right</button>
-                    <select class="font-family-select">
+                    <button class="btn text-align-left">Left</button>
+                    <button class="btn text-align-center">Center</button>
+                    <button class="btn text-align-right">Right</button>
+                    <select class="btn font-family-select">
                         <option value="Impact">Impact</option>
                         <option value="option1">Option1</option>
                         <option value="option2">Option2</option>
                         <option value="option3">Option3</option>
                     </select>
-                    <button class="text-bold">Bold</button>
+                    <button class=" btn text-bold">Bold</button>
                 </form>
                 <form class="text-emojies">
                        <p> Here will be text emjoies list</p>
                 </form>
             </main>
             <footer class="main-editor-footer">
-                <a class="links" href="#" onclick="onClickShareImg(this)">Share</a>
-                <a class="links" href="#" download="img" onclick="onClickDownloadImg(this)">Download</a>
+                <div class="link-container">
+                    <a class="links" href="#" onclick="onClickShareImg(this)">Share</a>
+                </div>
+                <div class="link-container">
+                    <a class="links" href="#" download="img" onclick="onClickDownloadImg(this)">Download</a>
+                </div>
             </footer>
         </section>
     </main>

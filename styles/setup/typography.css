@@ -17,3 +17,14 @@
 .main-layout .main-header .logo{
     font-family: Bungee-Regular;
 }
+
+.main-layout .main-header .header-btns li .headerBtn{
+    font-family: Bungee-Spice;
+}
+
+.main-layout .main-content{
+    font-family: Bungee-Hairline ;
+    font-weight: bold;
+}
+
+
