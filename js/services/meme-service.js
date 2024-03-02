@@ -85,6 +85,10 @@ function setSelectedImgId(idx) {
     renderGallery
 }
 
+function setPositionLine(pos) {
+    gMeme.lines[gMeme.selectedLineIdx].pos = {x: pos.x, y: pos.y}
+}
+
 function deleteLine(idx) {
     gMeme.lines.splice(idx, 1)
 }
