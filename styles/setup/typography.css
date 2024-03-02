@@ -12,3 +12,8 @@
     font-family: Bungee-Spice;
     src: url(/fonts/Bungee/Bungee_Hairline/Bungee/Bungee_Spice/BungeeSpice-Regular.ttf);
 }
+
+
+.main-layout .main-header .logo{
+    font-family: Bungee-Regular;
+}
