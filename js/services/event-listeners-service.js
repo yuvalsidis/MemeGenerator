@@ -31,5 +31,6 @@ function colorInputListener(){
         console.log(event.target.value)
         onSetTextColor(event.target.value)
     })
+    gColorInputElm.value =  getLine().color
 }
 

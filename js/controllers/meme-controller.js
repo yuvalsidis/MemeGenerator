@@ -14,6 +14,7 @@ function onInit() {
     gCtx = gElCavnas.getContext('2d')
     renderMeme()
     eventListeners()
+    onIncreaseSize()
 }
 
 function renderMeme() {
@@ -162,6 +163,13 @@ function onClickSwitchLine() {
         textElm.value = textElm.value ? getLine().txt : ''
         renderMeme()
     }
+
+    // adjust Update color value on switch line..
+    gColorInputElm = document.querySelector('.main-editor-content .color-input')
+    gColorInputElm.value =  getLine().color
+
+    //adjust Update text size on switch line
+    onIncreaseSize()
 }
 
 // Draw a frame on the the selected line 
