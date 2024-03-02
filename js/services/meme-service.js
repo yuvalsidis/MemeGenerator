@@ -10,7 +10,8 @@ var gMeme = {
             position: { x: 140, y: 40 },
             txt: 'Insert text here',
             size: 40,
-            color: 'white'
+            color: 'white',
+            fontFamily : 'impact'
         }
     ]
 
@@ -105,7 +106,8 @@ function createLine(){
             position: { x: gPosition.x, y: gPosition.y },
             txt: 'Insert text here',
             size: 40,
-            color: 'white'
+            color: 'white',
+            fontFamily : 'impact'
         }
     )
     console.log('added line')
