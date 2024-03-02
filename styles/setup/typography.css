@@ -1,0 +1,14 @@
+
+/* FONTS*/
+@font-face{
+    font-family: Bungee-Hairline;
+    src: url(/fonts/Bungee/Bungee_Hairline/Bungee/Bungee_Hairline/BungeeHairline-Regular.ttf)
+}
+@font-face{
+    font-family: Bungee-Regular;
+    src: url(/fonts/Bungee/Bungee_Hairline/Bungee/Bungee_Regular/Bungee-Regular.ttf);
+}
+@font-face{
+    font-family: Bungee-Spice;
+    src: url(/fonts/Bungee/Bungee_Hairline/Bungee/Bungee_Spice/BungeeSpice-Regular.ttf);
+}
