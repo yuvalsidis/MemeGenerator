@@ -9,6 +9,13 @@ function clickOnBodyElments(){
     document.body.addEventListener('click', event => {
         event.target.classList.contains('btn') ? event.preventDefault() : null 
     })
+    document.body.addEventListener('click', event => {
+        event.target.classList.contains('emoji') ? event.preventDefault() : null 
+    })
+    document.body.addEventListener('click', event => {
+        event.target.classList.contains('arrow') ? event.preventDefault() : null 
+    })
+
 }
 
 function textInputListener(){
