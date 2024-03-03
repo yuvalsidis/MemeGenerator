@@ -56,7 +56,7 @@
 
     .main-content {
         display: grid;
-        grid-template-columns: minmax(34.375em, 1fr);
+        grid-template-columns: minmax(17.375em, 1fr);
         grid-template-areas:
             " gallery "
             "  editor ";
