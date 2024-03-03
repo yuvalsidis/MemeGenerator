@@ -100,7 +100,8 @@ function onClickDelete() {
 
 //Make the text bold
 function onClickBold() {
-
+    getLine().bold = true
+    renderMeme()
 }
 
 
@@ -178,9 +179,14 @@ function onClickSwitchLine() {
     onIncreaseSize()
 }
 
-function addBoldToText(pos, fontSize, text, fontFamily) {
+function addBoldToText(pos, fontSize, text, fontFamily, condition) {
+    if(condition){
+        gCtx.font = `bold ${fontSize}px ${fontFamily}`
+    }
+    else{
+        gCtx.font = `${fontSize}px ${fontFamily}`
+    }
     gCtx.save()
-    gCtx.font = `bold ${fontSize}px ${fontFamily}`
     gCtx.fillText(text, pos.x, pos.y)
     gCtx.font()
     gCtx.restore()
