@@ -113,9 +113,9 @@ function createLine(){
     gMeme.lines.push(
         {
             position: { x: gPosition.x, y: gPosition.y },
-            txt: 'Insert text here',
+            txt: 'New Text Line',
             size: 40,
-            color: 'white',
+            color: '#FFFFFF',
             fontFamily : 'impact',
             bold : false
         }
