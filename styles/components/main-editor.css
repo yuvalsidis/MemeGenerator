@@ -175,15 +175,16 @@
 
 }
 
+
+
+.main-editor .main-editor-content .text-emojies .emojies-ul li {
+    padding: 1.5em
+}
+
 .main-editor .main-editor-content .text-emojies .emojies-ul li .emoji {
     scale: 3;
     border: none;
     background-color: transparent;
 }
 
-.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji {
 
-}
-
-
-/* emojies-ul */
