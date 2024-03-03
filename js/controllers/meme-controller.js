@@ -100,8 +100,12 @@ function onClickDelete() {
 
 //Make the text bold
 function onClickBold() {
+    console.log('value',getLine().bold)
     if(getLine().bold){
-           
+         setLineBoldValue(false)  
+    }
+    else{
+         setLineBoldValue(true)
     }
     addBoldToText({x : getLine().position.x, y : getLine().position.y}, getLine().fontSize, getLine().txt, getLine().fontFamily, getLine().bold)
     renderMeme()
@@ -159,39 +163,39 @@ function handleClickOnLine() {
 //This function Handle when switching line
 function onClickSwitchLine() {
     const textElm = document.querySelector('.main-editor-header .text-input')
+    
     const linesLength = getLinesLength()
     let correctLine = getSelectedLineIdx()
     correctLine++
     console.log(correctLine)
     if (correctLine > linesLength - 1) {
         setSelectedLineIdx(0)
-        textElm.value = textElm.value ? getLine().txt : ''
         renderMeme()
     }
     else {
         setSelectedLineIdx(correctLine)
-        textElm.value = textElm.value ? getLine().txt : ''
         renderMeme()
     }
+    textElm.value = textElm.value ? getLine().txt : ''
 
     // adjust Update color value on switch line..
     gColorInputElm = document.querySelector('.main-editor-content .color-input')
     gColorInputElm.value = getLine().color
-
     //adjust Update text size on switch line
-    onIncreaseSize()
+    const sizeValueText = document.querySelector('.main-editor-content .correctSize')
+    sizeValueText.innerText = getLine().size
+    
 }
 
 function addBoldToText(pos, fontSize, text, fontFamily, condition) {
+    gCtx.save()
     if(condition){
         gCtx.font = `bold ${fontSize}px ${fontFamily}`
     }
     else{
         gCtx.font = `${fontSize}px ${fontFamily}`
     }
-    gCtx.save()
     gCtx.fillText(text, pos.x, pos.y)
-    gCtx.font()
     gCtx.restore()
 }
 
