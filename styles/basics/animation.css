@@ -12,3 +12,8 @@
         transform: scale(1);
     }
 }
+
+
+.buttonAnimation{
+    animation: buttonAnimation 1s ease;
+}
