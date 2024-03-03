@@ -11,7 +11,8 @@ var gMeme = {
             txt: 'Insert text here',
             size: 40,
             color: 'white',
-            fontFamily : 'impact'
+            fontFamily : 'impact',
+            bold : false
         }
     ]
 
@@ -107,7 +108,8 @@ function createLine(){
             txt: 'Insert text here',
             size: 40,
             color: 'white',
-            fontFamily : 'impact'
+            fontFamily : 'impact',
+            bold : false
         }
     )
     console.log('added line')
