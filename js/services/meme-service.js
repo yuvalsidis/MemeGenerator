@@ -87,6 +87,14 @@ function setSelectedImgId(idx) {
     renderGallery
 }
 
+function setLineBoldValue(condition) {
+    gMeme.lines.find((line,index) => {
+        if(index === gMeme.selectedLineIdx){
+            line.bold = condition
+        }
+    })
+}
+
 function setPositionLine(pos) {
     gMeme.lines.find((line,index) => {
         if(index === gMeme.selectedLineIdx){

@@ -100,7 +100,10 @@ function onClickDelete() {
 
 //Make the text bold
 function onClickBold() {
-    getLine().bold = true
+    if(getLine().bold){
+           
+    }
+    addBoldToText({x : getLine().position.x, y : getLine().position.y}, getLine().fontSize, getLine().txt, getLine().fontFamily, getLine().bold)
     renderMeme()
 }
 
