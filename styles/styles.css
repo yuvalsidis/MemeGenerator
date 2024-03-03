@@ -3,6 +3,7 @@
 @import url(basics/layout.css);
 @import url(basics/helpers.css);
 @import url(basics/btn.css);
+@import url(basics/animation.css);
 
 /* SETUP */
 @import url(setup/typography.css);
