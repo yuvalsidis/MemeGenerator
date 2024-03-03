@@ -18,10 +18,13 @@
     src: url(/fonts/fa-solid-900.ttf);
 }
 
+
+/* LOGO FONT */
 .main-layout .main-header .logo{
     font-family: Bungee-Regular;
 }
 
+/* HEADERS BUTTONS FONT */
 .main-layout .main-header .header-btns li .headerBtn{
     font-family: Bungee-Spice;
 }
@@ -34,7 +37,7 @@
 
 
 
-/* ICONS */
+/* ICONS MAIN EDITOR */
 .main-editor .main-editor-content .text-decoration .text-align-center::before{
    font-family: fa-solid;
    content: "\f037";
@@ -71,4 +74,50 @@
 }
 
 
+/* ARROWS FONTS */
+.main-content .main-editor .main-editor-content .text-emojies .arrow-right::before{
+    font-family: fa-solid;
+    content: "\f061";
+}
 
+.main-content .main-editor .main-editor-content .text-emojies .arrow-left::before{
+    font-family: fa-solid;
+    content: "\f060";
+}
+
+
+/* EMOJOIES FONTS */
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji0::before{
+    font-family: fa-solid;
+    content: "\f5c8";
+}
+
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji1::before{
+    font-family: fa-solid;
+    content: "\f5b3";
+}
+
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji2::before{
+    font-family: fa-solid;
+    content: "\f59c";
+}
+
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji3::before{
+    font-family: fa-solid;
+    content: "\f556";
+}
+
+
+/* SOLID EMOJIES FIRST 4*/
+/* f5c8 */
+/* f5b3 */
+/* f59c */
+/* f556 */
+
+/* LIGHT EMOJIES  */
+/* f5a5 */
+/* f598 */
+/* f579 */
+/* f567 */
+
+/* REUGLAR EMOJIOES LAST 4*/ 

@@ -1,14 +1,14 @@
-.main-editor{
+.main-editor {
     display: grid;
     grid-template-rows: 1fr 2fr 3fr 1fr;
     text-align: center;
 }
 
-.main-editor h1{
+.main-editor h1 {
     grid-row: 1;
 }
 
-.main-editor .main-editor-header form{
+.main-editor .main-editor-header form {
     position: relative;
     height: 100%;
     grid-row: 2;
@@ -16,18 +16,18 @@
     grid-template-rows: 1fr 1fr;
 }
 
-.main-editor .main-editor-content{
+.main-editor .main-editor-content {
     position: relative;
     grid-row: 3;
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
 
-.main-editor .main-editor-footer{
+.main-editor .main-editor-footer {
     grid-row: 4;
 }
 
-.main-editor .main-editor-header .text-input{
+.main-editor .main-editor-header .text-input {
     grid-row: 1;
     position: absolute;
     width: 300px;
@@ -36,13 +36,14 @@
     transform: translateY(80%);
     border-radius: 1em;
     border-style: none;
-    
+
 }
-.main-editor .main-editor-header .text-controller{
+
+.main-editor .main-editor-header .text-controller {
     grid-row: 2;
 }
 
-.main-editor .main-editor-content .text-decoration{
+.main-editor .main-editor-content .text-decoration {
     grid-row: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -55,13 +56,14 @@
     background-color: gray;
     border-radius: 2em;
 }
-.main-editor .main-editor-content .text-decoration > *{
+
+.main-editor .main-editor-content .text-decoration>* {
     border-radius: 0.5em;
     border-style: none;
 }
 
 
-.main-editor .main-editor-content .text-decoration .size-input{
+.main-editor .main-editor-content .text-decoration .size-input {
     grid-column: 1;
     grid-row: 1;
     display: flex;
@@ -69,42 +71,44 @@
     border-radius: 2em;
 }
 
-.main-editor .main-editor-content .text-decoration .color-input{
+.main-editor .main-editor-content .text-decoration .color-input {
     grid-column: 4;
     grid-row: 2;
-    
+
 }
 
-.main-editor .main-editor-content .text-decoration .text-align-left{
+.main-editor .main-editor-content .text-decoration .text-align-left {
     grid-column: 2;
     grid-row: 1;
     scale: 1.5;
 }
 
-.main-editor .main-editor-content .text-decoration .text-align-center{
+.main-editor .main-editor-content .text-decoration .text-align-center {
     grid-column: 3;
     grid-row: 1;
     scale: 1.5;
 }
 
-.main-editor .main-editor-content .text-decoration .text-align-right{
+.main-editor .main-editor-content .text-decoration .text-align-right {
     grid-column: 4;
     grid-row: 1;
     scale: 1.5;
 }
-.main-editor .main-editor-content .text-decoration .font-family-select{
+
+.main-editor .main-editor-content .text-decoration .font-family-select {
     width: 10em;
     padding: 5px;
     grid-column: 1/3;
     grid-row: 2;
 }
-.main-editor .main-editor-content .text-decoration .text-bold{
+
+.main-editor .main-editor-content .text-decoration .text-bold {
     grid-column: 3/4;
     grid-row: 2;
     scale: 1.5;
 }
 
-.main-editor .main-editor-content .text-emojies{
+.main-editor .main-editor-content .text-emojies {
     grid-row: 2;
     width: 80%;
     height: 80%;
@@ -113,34 +117,73 @@
     border-radius: 2em;
 }
 
-.main-editor .text-decoration .size-input{
+.main-editor .text-decoration .size-input {
     border-radius: 2em;
     background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
 
-.main-editor .text-decoration .size-input * > .btn{
+.main-editor .text-decoration .size-input *>.btn {
     border-style: none;
 }
-.main-editor .text-decoration .size-input li{
+
+.main-editor .text-decoration .size-input li {
     background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
 
-.main-editor .main-editor-footer .link-container .links{
+.main-editor .main-editor-footer .link-container .links {
     border-radius: 1em;
     color: black;
     text-decoration: none;
 }
 
-.main-editor .main-editor-footer .link-container{
+.main-editor .main-editor-footer .link-container {
     background-color: white;
     display: inline-block;
     border-radius: 1em;
     margin-left: 10px;
 }
 
-.main-editor .main-editor-header .text-controller > *{
+.main-editor .main-editor-header .text-controller>* {
     scale: 1.5;
     margin-left: 20px;
 }
 
+.main-editor .main-editor-content .text-emojies {
+    justify-content: center;
+    align-content: center;
+}
 
+.main-editor .main-editor-content .text-emojies .arrow-right {
+    position: absolute;
+    align-self: center;
+    scale: 1.5;
+    right: 0;
+    margin-right: 5em;
+    border: none;
+    background-color: transparent;
+
+}
+
+.main-editor .main-editor-content .text-emojies .arrow-left {
+    position: absolute;
+    align-self: center;
+    scale: 1.5;
+    left: 0;
+    border: none;
+    margin-left: 5em;
+    background-color: transparent;
+
+}
+
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji {
+    scale: 3;
+    border: none;
+    background-color: transparent;
+}
+
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji {
+
+}
+
+
+/* emojies-ul */
