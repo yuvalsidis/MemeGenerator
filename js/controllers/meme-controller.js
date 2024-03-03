@@ -178,26 +178,13 @@ function onClickSwitchLine() {
     onIncreaseSize()
 }
 
-
-
-
-
-
-// function addBoldToText(pos, fontSize, text) {
-//     gCtx.save()
-//     gCtx.font()
-// }
-
-
-
-
-
-
-
-
-
-
-
+function addBoldToText(pos, fontSize, text, fontFamily) {
+    gCtx.save()
+    gCtx.font = `bold ${fontSize}px ${fontFamily}`
+    gCtx.fillText(text, pos.x, pos.y)
+    gCtx.font()
+    gCtx.restore()
+}
 
 // Draw a frame on the the selected line 
 function drawAFrame(pos, fontSize, text) {
