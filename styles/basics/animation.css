@@ -1,19 +1,50 @@
 /* BUTTON ANIIMATION */
-@keyframes buttonAnimation{
+@keyframes emojiAnimation{
     0%{
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
     }
     
     50%{
-        transform: scale(1.1);
+        transform: scale(1.1) rotate(180deg);
     }
 
     100%{
-        transform: scale(1);
+        transform: scale(1) rotate(360deg);
     }
 }
 
 
-.buttonAnimation{
-    animation: buttonAnimation 1s ease;
+.main-editor .main-editor-content .text-emojies .emojies-ul li .emoji:hover{
+    animation: emojiAnimation 1s ease forwards;    
+}
+
+
+@keyframes buttonAnimation{
+    0%{
+        transform: scale(1) 
+    }
+    
+    50%{
+        transform: scale(1.1) 
+    }
+
+    100%{
+        transform: scale(1) 
+    }
+}
+
+.addLineBtn:hover,
+.switchLineBtn:hover,
+.deleteLineBtn:hover,
+.text-align-left:hover,
+.text-align-center:hover,
+.text-align-right:hover,
+.links:hover,
+.bold:hover,
+.arrow:hover{
+    animation: buttonAnimation 1s ease forwards; 
+}
+
+.headerBtn:hover{
+    animation: buttonAnimation 1s ease forwards;    
 }
